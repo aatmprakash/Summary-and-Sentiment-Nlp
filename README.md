@@ -6,6 +6,9 @@ Welcome to the Summary and Sentiment NLP project! This repository aims to provid
 
 The main objective of this project is to develop an NLP application that can summarize lengthy texts and perform sentiment analysis on them. With this tool, users can quickly grasp the essence of long documents and gain insights into the overall sentiment expressed in the text.
 
+
+
+
 ## Technologies Used
 
 The project is intented to built using the following technologies:
@@ -45,6 +48,18 @@ We are actively looking for collaborators to contribute their expertise and idea
 - Ensure your code is well-documented and easy to understand.
 - Test your changes thoroughly to avoid breaking existing functionality.
 - Be open to feedback and respectful during discussions.
+
+## How to Run the Project
+To run the project locally, follow these steps:
+1. **Install the required Python packages from the requirements.txt file using pip. Open a terminal and navigate to the project's backend folder.**
+   ```
+   pip install -r requirements.txt
+   ```
+2. ***Once all dependencies are installed, you can run the Flask backend using the following command:**
+   ```
+   python app.py
+   ```
+
 
 ## Current Issues
 

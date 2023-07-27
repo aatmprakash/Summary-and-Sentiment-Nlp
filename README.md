@@ -1,6 +1,6 @@
 # Summary and Sentiment NLP Project
 
-Welcome to the Summary and Sentiment NLP project! This repository aims to provide natural language processing functionalities to summarize text and analyze sentiments. We believe this project has great potential, and we are excited to invite collaborators to join us in making it even better.
+Welcome to the Summary and Sentiment NLP project! This repository aims to provide natural language processing functionalities to summarize text and analyze sentiments. We believe this project has great potential, and we are excited to invite collaborators to join us in making it even better.** It only works for yelp.com aiim to make it better**.
 
 ## Project Overview
 
@@ -45,6 +45,15 @@ We are actively looking for collaborators to contribute their expertise and idea
 - Ensure your code is well-documented and easy to understand.
 - Test your changes thoroughly to avoid breaking existing functionality.
 - Be open to feedback and respectful during discussions.
+
+## Current Issues
+
+1. **Website Responsiveness:** The current React/html frontend  not responsive on all devices and screen sizes. We need help from frontend developers to make the website responsive and user-friendly across various devices.
+
+2. **Expand Supported Websites:** Presently, the application only handles Yelp URLs for text analysis. We'd like to expand the supported websites to include Amazon and other popular platforms. Collaborators with experience in web scraping and NLP integration are welcome to tackle this task.
+
+3. **Backend Speed Optimization:** Some users have reported that the backend takes longer than expected to predict sentiment or generate summaries. We need contributors who can identify performance bottlenecks and optimize the backend processes for better response times.
+
 
 ## Code of Conduct
 

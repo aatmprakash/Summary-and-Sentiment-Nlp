@@ -1,1150 +1,1146 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
-    <title>Senti & Nlp</title>
-    <!-- <link rel="stylesheet" href="ch.css" /> -->
-    <style>
-      .macbook-pro {
-        background-color: #dfece9;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 100%;
-        border-radius: 24px;
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+  <title>Senti & Nlp</title>
+  <!-- <link rel="stylesheet" href="ch.css" /> -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .macbook-pro {
+      background-color: #dfece9;
+      /* border-radius: 24px; */
+      min-height: 100vh;
+      min-width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .space {
+      margin: 8px
+    }
+
+    .space-surround {
+      margin: 10px;
+    }
+
+    .app-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      padding: 0 10px
+    }
+
+
+
+    .macbook-pro .overlap-group {
+      background-color: #262735;
+      border-radius: 100px;
+      box-shadow: 0px 4px 28px #0000002b;
+      height: 52px;
+      position: relative;
+      width: 752px;
+    }
+
+    .macbook-pro .inputarea {
+      background-color: #262735;
+      border-radius: none;
+      border-style: none;
+      color: #c2c2c6;
+      font-family: "Lufga-Regular", Helvetica;
+      font-size: 22px;
+      font-weight: 400;
+      height: 47px;
+      left: 56px;
+      letter-spacing: 0;
+      line-height: 31.2px;
+      position: absolute;
+      top: 2px;
+      white-space: nowrap;
+      width: 573px;
+      outline: none;
+    }
+
+    .macbook-pro .submit-button {
+      background-color: #f5f5f5;
+      border-radius: 100px;
+      height: 44px;
+      left: 3px;
+      position: absolute;
+      top: 4px;
+      width: 44px;
+    }
+
+    .macbook-pro .clarity-search-line {
+      height: 22px;
+      left: 8px;
+      position: absolute;
+      top: 10px;
+      width: 22px;
+    }
+
+    .macbook-pro .vector-wrapper {
+      background-color: #3b3c48;
+      border-radius: 100px;
+      height: 44px;
+      left: 655px;
+      position: absolute;
+      top: 4px;
+      width: 44px;
+    }
+
+    .macbook-pro .vector {
+      height: 20px;
+      left: 13px;
+      position: absolute;
+      top: 12px;
+      width: 18px;
+    }
+
+    .macbook-pro .button-submit {
+      background-color: #f5f5f5;
+      border-radius: 100px;
+      height: 44px;
+      left: 704px;
+      position: absolute;
+      top: 4px;
+      width: 44px;
+    }
+
+    .macbook-pro .img {
+      height: 14px;
+      left: 13px;
+      position: absolute;
+      top: 14px;
+      width: 15px;
+    }
+
+    .macbook-pro .center-div {
+      margin-top: 50px;
+      padding: 5px;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* center-div media query */
+    @media (max-width: 1400px) {
+
+      .overlap {
+        flex-grow: 1;
       }
 
-      .macbook-pro .div {
-        background-color: #dfece9;
-        border: 1px none;
-        height: 718px;
-        position: relative;
-        width: 1501px;
-        border-radius: 72px;
+      .his-main-div {
+        order: 1;
       }
 
-      .macbook-pro .group {
-        height: 52px;
-        left: 381px;
-        position: absolute;
-        top: 25px;
-        width: 749px;
+      /* .overlap-6 {
+        order: 2;
+      } */
+    }
+
+    @media (max-width: 1112px) {
+
+
+      .profile {
+        order: 1;
       }
 
-      .macbook-pro .overlap-group {
-        background-color: #262735;
-        border-radius: 100px;
-        box-shadow: 0px 4px 28px #0000002b;
-        height: 52px;
-        position: relative;
-        top: -16px;
-        width: 752px;
+      .senti-nlp {
+        order: -1;
       }
 
-      .macbook-pro .inputarea {background-color: #262735;border-radius: none;border-style: none;color: #c2c2c6;font-family: "Lufga-Regular", Helvetica;font-size: 22px;font-weight: 400;height: 47px;left: 56px;letter-spacing: 0;line-height: 31.2px;position: absolute;top: 2px;white-space: nowrap;width: 573px;outline: none;}
-
-      .macbook-pro .submit-button {
-        background-color: #f5f5f5;
-        border-radius: 100px;
-        height: 44px;
-        left: 3px;
-        position: absolute;
-        top: 4px;
-        width: 44px;
+      .group {
+        order: 2;
+        width: auto
       }
+    }
 
-      .macbook-pro .clarity-search-line {
-        height: 22px;
-        left: 8px;
-        position: absolute;
-        top: 10px;
-        width: 22px;
-      }
-
-      .macbook-pro .vector-wrapper {
-        background-color: #3b3c48;
-        border-radius: 100px;
-        height: 44px;
-        left: 655px;
-        position: absolute;
-        top: 4px;
-        width: 44px;
-      }
-
-      .macbook-pro .vector {
-        height: 20px;
-        left: 13px;
-        position: absolute;
-        top: 12px;
-        width: 18px;
-      }
-
-      .macbook-pro .button-submit {
-        background-color: #f5f5f5;
-        border-radius: 100px;
-        height: 44px;
-        left: 704px;
-        position: absolute;
-        top: 4px;
-        width: 44px;
-      }
-
-      .macbook-pro .img {
-        height: 14px;
-        left: 13px;
-        position: absolute;
-        top: 14px;
-        width: 15px;
-      }
-
-      .macbook-pro .center-div {
-        height: 533px;
-        left: 372px;
-        position: absolute;
-        top: 156px;
-        width: 810px;
-      }
-
-      .macbook-pro .overlap {
-        -webkit-backdrop-filter: blur(27px) brightness(100%);
-        backdrop-filter: blur(27px) brightness(100%);
-        background: linear-gradient(
-          180deg,
+    .macbook-pro .overlap {
+      -webkit-backdrop-filter: blur(27px) brightness(100%);
+      backdrop-filter: blur(27px) brightness(100%);
+      background: linear-gradient(180deg,
           rgb(255, 255, 255) 0%,
           rgb(249.67, 251.73, 251.39) 17.19%,
           rgba(228.84, 238.97, 237.28, 0.8) 66.67%,
-          rgba(229.66, 238.2, 236.78, 0.4) 100%
-        );
-        border-radius: 34px;
-        box-shadow: 0px 2px 38px #0000001a;
-        height: 547px;
-        position: relative;
-        width: 767px;
-      }
+          rgba(229.66, 238.2, 236.78, 0.4) 100%);
+      border-radius: 34px;
+      box-shadow: 0px 2px 38px #0000001a;
+      height: 547px;
+      max-width: 767px;
+      min-width: 767px;
 
-      .macbook-pro .overlap-2 {
-        background-color: #ffe6b7;
-        border-radius: 24px;
-        height: 396px;
-        left: 99px;
-        position: absolute;
-        top: 139px;
-        width: 654px;
-      }
+    }
 
-      .macbook-pro .overlap-3 {
-        height: 233px;
-        left: 36px;
-        position: absolute;
-        top: 45px;
-        width: 608px;
-        display: flex;
-        max-height: 100%;
-        align-items: center; /* Ensure the container doesn't exceed the height of its parent */
-      }
+    .macbook-pro .overlap-2 {
+      background-color: #ffe6b7;
+      border-radius: 24px;
+      height: 396px;
+      left: 99px;
+      position: absolute;
+      top: 139px;
+      width: 654px;
+    }
 
-      .macbook-pro .social-brew-is {
-        color: #352e25;
-        font-family: "Lufga-SemiBold", Helvetica;
-        font-size: 14px;
-        font-weight: 600;
-        left: 0;
-        letter-spacing: 0;
-        line-height: 18px;
-        position: absolute;
-        top: 21px;
-        width: 582px;
-        height: 223px;
-        white-space: normal;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        /* box-sizing: border-box; */ /* Optional: Ensure padding is included in the defined height */
-        /* display: flex; */
-        /* align-items: center; */
-      }
+    .macbook-pro .overlap-3 {
+      height: 233px;
+      left: 36px;
+      position: absolute;
+      top: 45px;
+      width: 608px;
+      display: flex;
+      max-height: 100%;
+      align-items: center;
+      /* Ensure the container doesn't exceed the height of its parent */
+    }
 
-      .macbook-pro .text-wrapper {
-        color: #352e25;
-        font-family: "Lufga-SemiBold", Helvetica;
-        font-size: 19px;
-        font-weight: 600;
-        height: 22px;
-        left: 0;
-        letter-spacing: 0;
-        line-height: 12px;
-        position: absolute;
-        top: 0;
-      }
+    .macbook-pro .social-brew-is {
+      color: #352e25;
+      font-family: "Lufga-SemiBold", Helvetica;
+      font-size: 14px;
+      font-weight: 600;
+      left: 0;
+      letter-spacing: 0;
+      line-height: 18px;
+      position: absolute;
+      top: 21px;
+      width: 582px;
+      height: 223px;
+      white-space: normal;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      /* box-sizing: border-box; */
+      /* Optional: Ensure padding is included in the defined height */
+      /* display: flex; */
+      /* align-items: center; */
+    }
 
-      .macbook-pro .group-2 {
-        height: 60px;
-        left: 512px;
-        position: absolute;
-        top: 328px;
-        width: 132px;
-      }
+    .macbook-pro .text-wrapper {
+      color: #352e25;
+      font-family: "Lufga-SemiBold", Helvetica;
+      font-size: 19px;
+      font-weight: 600;
+      height: 22px;
+      left: 0;
+      letter-spacing: 0;
+      line-height: 12px;
+      position: absolute;
+      top: 0;
+    }
 
-      .macbook-pro .solar-copy-linear-wrapper {
-        background-color: #f5f5f5;
-        border-radius: 61.5px;
-        height: 56px;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 56px;
-      }
+    .macbook-pro .group-2 {
+      height: 60px;
+      left: 512px;
+      position: absolute;
+      top: 328px;
+      width: 132px;
+    }
 
-      .macbook-pro .img-2 {
-        height: 18px;
-        left: 19px;
-        position: absolute;
-        top: 19px;
-        width: 18px;
-      }
+    .macbook-pro .solar-copy-linear-wrapper {
+      background-color: #f5f5f5;
+      border-radius: 61.5px;
+      height: 56px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 56px;
+    }
 
-      .macbook-pro .mingcute-send-line-wrapper {
-        background-color: #262735;
-        border-radius: 100px;
-        height: 56px;
-        left: 75px;
-        position: absolute;
-        top: 0;
-        width: 56px;
-      }
+    .macbook-pro .img-2 {
+      height: 18px;
+      left: 19px;
+      position: absolute;
+      top: 19px;
+      width: 18px;
+    }
 
-      .macbook-pro .overlap-group-2 {
-        height: 53px;
-        left: 24px;
-        position: absolute;
-        top: 64px;
-        width: 311px;
-      }
+    .macbook-pro .mingcute-send-line-wrapper {
+      background-color: #262735;
+      border-radius: 100px;
+      height: 56px;
+      left: 75px;
+      position: absolute;
+      top: 0;
+      width: 56px;
+    }
 
-      .macbook-pro .rectangle {
-        background-color: #f5f5f5;
-        border-radius: 61.5px;
-        height: 56px;
-        left: 31px;
-        position: absolute;
-        top: 148px;
-        width: 56px;
-      }
+    .macbook-pro .overlap-group-2 {
+      height: 53px;
+      left: 24px;
+      position: absolute;
+      top: 64px;
+      width: 311px;
+    }
 
-      .macbook-pro .ser-logo {
-        height: 60px;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 60px;
-      }
+    .macbook-pro .rectangle {
+      background-color: #f5f5f5;
+      border-radius: 61.5px;
+      height: 56px;
+      left: 31px;
+      position: absolute;
+      top: 148px;
+      width: 56px;
+    }
 
-      .macbook-pro .ser-logo-2 {
-        height: 72px;
-        left: 0px;
-        position: absolute;
-        top: 0px;
-        width: 72px;
-      }
+    .macbook-pro .ser-logo {
+      height: 60px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 60px;
+    }
 
-      .macbook-pro .ser-logo-3 {
-        height: 72px;
-        left: 87px;
-        position: absolute;
-        top: 0px;
-        width: 72px;
-      }
+    .macbook-pro .ser-logo-2 {
+      height: 72px;
+      left: 0px;
+      position: absolute;
+      top: 0px;
+      width: 72px;
+    }
 
-      .macbook-pro .yt {
-        height: 72px;
-        left: 167px;
-        position: absolute;
-        top: 0px;
-        width: 72px;
-      }
+    .macbook-pro .ser-logo-3 {
+      height: 72px;
+      left: 87px;
+      position: absolute;
+      top: 0px;
+      width: 72px;
+    }
 
-      .macbook-pro .ser-logo-4 {
-        height: 67px;
-        left: 244px;
-        position: absolute;
-        top: 2px;
-        width: 67px;
-      }
+    .macbook-pro .yt {
+      height: 72px;
+      left: 167px;
+      position: absolute;
+      top: 0px;
+      width: 72px;
+    }
 
-      .macbook-pro .group-3 {
-        height: 56px;
-        left: 511px;
-        position: absolute;
-        top: -50px;
-        width: 210px;
-      }
+    .macbook-pro .ser-logo-4 {
+      height: 67px;
+      left: 244px;
+      position: absolute;
+      top: 2px;
+      width: 67px;
+    }
 
-      .macbook-pro .mingcute-save-line-wrapper {
-        background-color: #f5f5f5;
-        border-radius: 61.5px;
-        height: 56px;
-        left: 94px;
-        position: absolute;
-        top: 0;
-        width: 56px;
-      }
+    .macbook-pro .group-3 {
+      height: 56px;
+      left: 511px;
+      position: absolute;
+      top: -50px;
+      width: 210px;
+    }
 
-      .macbook-pro .mingcute-save-line {
-        height: 18px;
-        left: 13px;
-        position: absolute;
-        top: 20px;
-        width: 29px;
-      }
+    .macbook-pro .mingcute-save-line-wrapper {
+      background-color: #f5f5f5;
+      border-radius: 61.5px;
+      height: 56px;
+      left: 94px;
+      position: absolute;
+      top: 0;
+      width: 56px;
+    }
 
-      .macbook-pro .img-wrapper {
-        background-color: #f5f5f5;
-        border-radius: 100px;
-        height: 56px;
-        left: 165px;
-        position: absolute;
-        top: 0;
-        width: 56px;
-      }
+    .macbook-pro .mingcute-save-line {
+      height: 18px;
+      left: 13px;
+      position: absolute;
+      top: 20px;
+      width: 29px;
+    }
 
-      .macbook-pro .vector-2 {
-        height: 17px;
-        left: 17px;
-        position: absolute;
-        top: 20px;
-        width: 22px;
-      }
+    .macbook-pro .img-wrapper {
+      background-color: #f5f5f5;
+      border-radius: 100px;
+      height: 56px;
+      left: 165px;
+      position: absolute;
+      top: 0;
+      width: 56px;
+    }
 
-      .macbook-pro .icon-park-outline-wrapper {
-        background-color: #f5f5f5;
-        border-radius: 100px;
-        height: 56px;
-        left: 24px;
-        position: absolute;
-        top: 0;
-        width: 56px;
-      }
+    .macbook-pro .vector-2 {
+      height: 17px;
+      left: 17px;
+      position: absolute;
+      top: 20px;
+      width: 22px;
+    }
 
-      .macbook-pro .icon-park-outline {
-        height: 18px;
-        left: 8px;
-        position: absolute;
-        top: 18px;
-        width: 38px;
-      }
+    .macbook-pro .icon-park-outline-wrapper {
+      background-color: #f5f5f5;
+      border-radius: 100px;
+      height: 56px;
+      left: 24px;
+      position: absolute;
+      top: 0;
+      width: 56px;
+    }
 
-      .macbook-pro .profile {
-        height: 52px;
-        left: 788px;
-        position: absolute;
-        top: -132px;
-        width: 329px;
-      }
+    .macbook-pro .icon-park-outline {
+      height: 18px;
+      left: 8px;
+      position: absolute;
+      top: 18px;
+      width: 38px;
+    }
 
-      .macbook-pro .overlap-4 {
-        background-color: #ffffff;
-        border-radius: 34px;
-        box-shadow: 0px 4px 34px #00000012;
-        height: 52px;
-        position: relative;
-        width: 329px;
-      }
+    .macbook-pro .profile {}
 
-      .macbook-pro .avtar {
-        height: 44px;
-        left: 4px;
-        position: absolute;
-        top: 4px;
-        width: 44px;
-      }
+    .macbook-pro .overlap-4 {
+      background-color: #ffffff;
+      border-radius: 34px;
+      box-shadow: 0px 4px 34px #00000012;
+      height: 52px;
+      position: relative;
+      width: 329px;
+    }
 
-      .macbook-pro .notify {
-        background-color: #f5f5f5;
-        border-radius: 31px;
-        height: 44px;
-        left: 232px;
-        position: absolute;
-        top: 3px;
-        width: 44px;
-      }
+    .macbook-pro .avtar {
+      height: 44px;
+      left: 4px;
+      position: absolute;
+      top: 4px;
+      width: 44px;
+    }
 
-      .macbook-pro .num {
-        height: 16px;
-        left: 31px;
-        position: absolute;
-        top: 2px;
-        width: 18px;
-      }
+    .macbook-pro .notify {
+      background-color: #f5f5f5;
+      border-radius: 31px;
+      height: 44px;
+      left: 232px;
+      position: absolute;
+      top: 3px;
+      width: 44px;
+    }
 
-      .macbook-pro .div-wrapper {
-        background-color: #ff7f7f;
-        border-radius: 31px;
-        height: 16px;
-        position: relative;
-        width: 16px;
-      }
+    .macbook-pro .num {
+      height: 16px;
+      left: 31px;
+      position: absolute;
+      top: 2px;
+      width: 18px;
+    }
 
-      .macbook-pro .text-wrapper-2 {
-        color: #f7f7f7;
-        font-family: "Lufga-SemiBold", Helvetica;
-        font-size: 9px;
-        font-weight: 600;
-        left: 6px;
-        letter-spacing: 0;
-        line-height: 11px;
-        position: absolute;
-        text-align: center;
-        top: 3px;
-        white-space: nowrap;
-      }
+    .macbook-pro .div-wrapper {
+      background-color: #ff7f7f;
+      border-radius: 31px;
+      height: 16px;
+      position: relative;
+      width: 16px;
+    }
 
-      .macbook-pro .vector-3 {
-        height: 16px;
-        left: 14px;
-        position: absolute;
-        top: 14px;
-        width: 18px;
-      }
+    .macbook-pro .text-wrapper-2 {
+      color: #f7f7f7;
+      font-family: "Lufga-SemiBold", Helvetica;
+      font-size: 9px;
+      font-weight: 600;
+      left: 6px;
+      letter-spacing: 0;
+      line-height: 11px;
+      position: absolute;
+      text-align: center;
+      top: 3px;
+      white-space: nowrap;
+    }
 
-      .macbook-pro .settting {
-        background-color: #f5f5f5;
-        border-radius: 31px;
-        height: 44px;
-        left: 281px;
-        position: absolute;
-        top: 4px;
-        width: 44px;
-      }
+    .macbook-pro .vector-3 {
+      height: 16px;
+      left: 14px;
+      position: absolute;
+      top: 14px;
+      width: 18px;
+    }
 
-      .macbook-pro .vector-4 {
-        height: 16px;
-        left: 12px;
-        position: absolute;
-        top: 14px;
-        width: 20px;
-      }
+    .macbook-pro .settting {
+      background-color: #f5f5f5;
+      border-radius: 31px;
+      height: 44px;
+      left: 281px;
+      position: absolute;
+      top: 4px;
+      width: 44px;
+    }
 
-      .macbook-pro .overlap-5 {
-        height: 34px;
-        left: 56px;
-        position: absolute;
-        top: 11px;
-        width: 203px;
-      }
+    .macbook-pro .vector-4 {
+      height: 16px;
+      left: 12px;
+      position: absolute;
+      top: 14px;
+      width: 20px;
+    }
 
-      .macbook-pro .text-wrapper-3 {
-        color: #000000;
-        font-family: "Lufga-SemiBold", Helvetica;
-        font-size: 15px;
-        font-weight: 600;
-        left: 0;
-        letter-spacing: 0;
-        line-height: 17.6px;
-        position: absolute;
-        top: 0;
-        white-space: nowrap;
-      }
+    .macbook-pro .overlap-5 {
+      height: 34px;
+      left: 56px;
+      position: absolute;
+      top: 11px;
+      width: 203px;
+    }
 
-      .macbook-pro .text-wrapper-4 {
-        color: #999999;
-        font-family: "Lufga-Regular", Helvetica;
-        font-size: 13px;
-        font-weight: 400;
-        height: 13px;
-        left: 0;
-        letter-spacing: 0;
-        line-height: 12.6px;
-        position: absolute;
-        top: 18px;
-        white-space: nowrap;
-      }
+    .macbook-pro .text-wrapper-3 {
+      color: #000000;
+      font-family: "Lufga-SemiBold", Helvetica;
+      font-size: 15px;
+      font-weight: 600;
+      left: 0;
+      letter-spacing: 0;
+      line-height: 17.6px;
+      position: absolute;
+      top: 0;
+      white-space: nowrap;
+    }
 
-      .macbook-pro .overlap-wrapper {
-        height: 543px;
-        left: 785px;
-        position: absolute;
-        top: 0px;
-        width: 335px;
-      }
+    .macbook-pro .text-wrapper-4 {
+      color: #999999;
+      font-family: "Lufga-Regular", Helvetica;
+      font-size: 13px;
+      font-weight: 400;
+      height: 13px;
+      left: 0;
+      letter-spacing: 0;
+      line-height: 12.6px;
+      position: absolute;
+      top: 18px;
+      white-space: nowrap;
+    }
 
-      .macbook-pro .overlap-6 {
-        background-color: #ffffff;
-        border-radius: 34px;
-        height: 548px;
-        position: relative;
-        width: 334px;
-      }
+    /* .macbook-pro .overlap-wrapper {
+            height: 543px;
+            width: 335px;
+        } */
 
-      .macbook-pro .overlap-7 {
-        background-color: #ffe6b7;
-        border-radius: 24px;
-        height: 361px;
-        left: 12px;
-        position: absolute;
-        top: 176px;
-        width: 311px;
-      }
+    .macbook-pro .overlap-6 {
+      background-color: #ffffff;
+      border-radius: 34px;
+      height: 548px;
+      position: relative;
+      width: 334px;
+      padding: 5;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+    }
 
-      .macbook-pro .p {
-        color: #000000;
-        font-family: "Lufga-Bold", Helvetica;
-        font-size: 21px;
-        font-weight: 700;
-        left: 27px;
-        letter-spacing: 0;
-        line-height: 30px;
-        position: absolute;
-        top: -7px;
-        white-space: nowrap;
-      }
+    .macbook-pro .overlap-7 {
+      background-color: #ffe6b7;
+      border-radius: 24px;
+      height: 361px;
+      /* position: absolute;
+            top: 176px; */
+      width: 100%;
+    }
 
-      .macbook-pro .text-wrapper-5 {
-        color: #262735;
-        font-family: "Lufga-SemiBold", Helvetica;
-        font-size: 198px;
-        font-weight: 600;
-        left: 96px;
-        letter-spacing: 0;
-        line-height: 0px;
-        position: absolute;
-        top: 196px;
-        white-space: nowrap;
-      }
+    .macbook-pro .p {
+      color: #000000;
+      font-family: "Lufga-Bold", Helvetica;
+      font-size: 21px;
+      font-weight: 700;
+      left: 27px;
+      letter-spacing: 0;
+      line-height: 30px;
+      position: absolute;
+      top: -7px;
+      white-space: nowrap;
+    }
 
-      .macbook-pro .group-4 {
-        height: 56px;
-        left: 12px;
-        position: absolute;
-        top: 101px;
-        width: 303px;
-      }
+    .macbook-pro .text-wrapper-5 {
+      color: #262735;
+      font-family: "Lufga-SemiBold", Helvetica;
+      font-size: 198px;
+      font-weight: 600;
+      left: 96px;
+      letter-spacing: 0;
+      line-height: 0px;
+      position: absolute;
+      top: 196px;
+      white-space: nowrap;
+    }
 
-      .macbook-pro .overlap-group-wrapper {
-        height: 56px;
-        left: 112px;
-        position: absolute;
-        top: 0;
-        width: 84px;
-      }
+    .macbook-pro .group-4 {
+      height: 56px;
+      left: 12px;
+      position: absolute;
+      top: 101px;
+      width: 303px;
+    }
 
-      .macbook-pro .overlap-group-3 {
-        background-color: #f5f5f5;
-        border-radius: 31px;
-        height: 56px;
-        position: relative;
-        width: 84px;
-      }
+    .macbook-pro .overlap-group-wrapper {
+      height: 56px;
+      left: 112px;
+      position: absolute;
+      top: 0;
+      width: 84px;
+    }
 
-      .macbook-pro .text-wrapper-6 {
-        color: #262735;
-        font-family: "Lufga-SemiBold", Helvetica;
-        font-size: 35px;
-        font-weight: 600;
-        left: 34px;
-        letter-spacing: 0;
-        line-height: 40px;
-        position: absolute;
-        top: 10px;
-        white-space: nowrap;
-      }
+    .macbook-pro .overlap-group-3 {
+      background-color: #f5f5f5;
+      border-radius: 31px;
+      height: 56px;
+      position: relative;
+      width: 84px;
+    }
 
-      .macbook-pro .group-5 {
-        height: 56px;
-        left: 3px;
-        position: absolute;
-        top: 0;
-        width: 110px;
-      }
+    .macbook-pro .text-wrapper-6 {
+      color: #262735;
+      font-family: "Lufga-SemiBold", Helvetica;
+      font-size: 35px;
+      font-weight: 600;
+      left: 34px;
+      letter-spacing: 0;
+      line-height: 40px;
+      position: absolute;
+      top: 10px;
+      white-space: nowrap;
+    }
 
-      .macbook-pro .overlap-8 {height: 56px;left: 219px;position: absolute;top: 0;width: 84px;}
+    .macbook-pro .group-5 {
+      height: 56px;
+      left: 3px;
+      position: absolute;
+      top: 0;
+      width: 110px;
+    }
 
-      .macbook-pro .rectangle-2 {
-        background-color: #f5f5f5;
-        border-radius: 31px;
-        height: 56px;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 84px;
-      }
+    .macbook-pro .overlap-8 {
+      height: 56px;
+      left: 219px;
+      position: absolute;
+      top: 0;
+      width: 84px;
+    }
 
-      .macbook-pro .text-wrapper-7 {
-        color: #262735;
-        font-family: "Lufga-SemiBold", Helvetica;
-        font-size: 35px;
-        font-weight: 600;
-        left: 33px;
-        letter-spacing: 0;
-        line-height: 36px;
-        position: absolute;
-        top: 12px;
-        white-space: nowrap;
-      }
+    .macbook-pro .rectangle-2 {
+      background-color: #f5f5f5;
+      border-radius: 31px;
+      height: 56px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 84px;
+    }
 
-      .macbook-pro .group-6 {
-        height: 56px;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 84px;
-      }
+    .macbook-pro .text-wrapper-7 {
+      color: #262735;
+      font-family: "Lufga-SemiBold", Helvetica;
+      font-size: 35px;
+      font-weight: 600;
+      left: 33px;
+      letter-spacing: 0;
+      line-height: 36px;
+      position: absolute;
+      top: 12px;
+      white-space: nowrap;
+    }
 
-      .macbook-pro .text-wrapper-8 {
-        color: #262735;
-        font-family: "Lufga-SemiBold", Helvetica;
-        font-size: 35px;
-        font-weight: 600;
-        left: 31px;
-        letter-spacing: 0;
-        line-height: 36px;
-        position: absolute;
-        top: 11px;
-        white-space: nowrap;
-      }
+    .macbook-pro .group-6 {
+      height: 56px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 84px;
+    }
 
-      .macbook-pro .group-7 {
-        background-color: #f5f5f5;
-        border-radius: 100px;
-        height: 56px;
-        left: 255px;
-        position: absolute;
-        top: -90px;
-        width: 56px;
-      }
+    .macbook-pro .text-wrapper-8 {
+      color: #262735;
+      font-family: "Lufga-SemiBold", Helvetica;
+      font-size: 35px;
+      font-weight: 600;
+      left: 31px;
+      letter-spacing: 0;
+      line-height: 36px;
+      position: absolute;
+      top: 11px;
+      white-space: nowrap;
+    }
 
-      .macbook-pro .his-main-div {
-        background: linear-gradient(
-          180deg,
+    .macbook-pro .group-7 {
+      background-color: #f5f5f5;
+      border-radius: 100px;
+      height: 56px;
+      left: 255px;
+      position: absolute;
+      top: -90px;
+      width: 56px;
+    }
+
+    .macbook-pro .his-main-div {
+      background: linear-gradient(180deg,
           rgb(255, 255, 255) 0%,
           rgba(255, 255, 255, 0.88) 58.85%,
-          rgba(255, 255, 255, 0) 100%
-        );
-        border-radius: 34px;
-        height: 556px;
-        left: -356px;
-        position: absolute;
-        top: 0px;
-        width: 342px;
-      }
+          rgba(255, 255, 255, 0) 100%);
+      border-radius: 34px;
+      height: 556px;
+      width: 342px;
+      position: relative;
+    }
 
-      .macbook-pro .history-div {
-        height: 76px;
-        left: 20px;
-        position: absolute;
-        top: 19px;
-        width: 303px;
-      }
+    .macbook-pro .history-div {
+      height: 76px;
+      left: 20px;
+      position: absolute;
+      top: 19px;
+      width: 303px;
+    }
 
-      .macbook-pro .btn-div {
-        height: 56px;
-        left: 193px;
-        position: absolute;
-        top: -5px;
-        width: 122px;
-      }
+    .macbook-pro .btn-div {
+      height: 56px;
+      left: 193px;
+      position: absolute;
+      top: -5px;
+      width: 122px;
+    }
 
-      .macbook-pro .img-wrapper-2 {
-        background-color: #f5f5f5;
-        border: 2px solid;
-        border-color: #ffffff;
-        border-radius: 61.5px;
-        height: 44px;
-        left: 16px;
-        position: absolute;
-        top: 0;
-        width: 44px;
-      }
+    .macbook-pro .img-wrapper-2 {
+      background-color: #f5f5f5;
+      border-color: #ffffff;
+      border-radius: 61.5px;
+      height: 44px;
+      left: 16px;
+      position: absolute;
+      top: 0;
+      width: 44px;
+    }
 
-      .macbook-pro .icon-park-outline-2 {
-        height: 18px;
-        left: 3px;
-        position: absolute;
-        top: 13px;
-        width: 38px;
-      }
+    .macbook-pro .icon-park-outline-2 {
+      height: 18px;
+      left: 3px;
+      position: absolute;
+      top: 13px;
+      width: 38px;
+    }
 
-      .macbook-pro .img-wrapper-3 {
-        background-color: #f5f5f5;
-        border: 2px solid;
-        border-color: #ffffff;
-        border-radius: 61.5px;
-        height: 44px;
-        left: 73px;
-        position: absolute;
-        top: 0;
-        width: 44px;
-      }
+    .macbook-pro .img-wrapper-3 {
+      background-color: #f5f5f5;
+      border-color: #ffffff;
+      border-radius: 61.5px;
+      height: 44px;
+      left: 73px;
+      position: absolute;
+      top: 0;
+      width: 44px;
+    }
 
-      .macbook-pro .today-s-history {
-        color: #000000;
-        font-family: "Lufga-Bold", Helvetica;
-        font-size: 25px;
-        font-weight: 700;
-        height: 76px;
-        left: 0;
-        letter-spacing: 0;
-        line-height: 22.5px;
-        position: absolute;
-        top: 0;
-      }
+    .macbook-pro .today-s-history {
+      color: #000000;
+      font-family: "Lufga-Bold", Helvetica;
+      font-size: 25px;
+      font-weight: 700;
+      height: 76px;
+      left: 0;
+      letter-spacing: 0;
+      line-height: 22.5px;
+      position: absolute;
+      top: 0;
+    }
 
-      .macbook-pro .history {
-        height: 185px;
-        left: 20px;
-        position: absolute;
-        top: 334px;
-        width: 312px;
-      }
+    .macbook-pro .history {
+      height: 185px;
+      left: 20px;
+      position: absolute;
+      top: 334px;
+      width: 312px;
+    }
 
-      .macbook-pro .overlap-group-4 {
-        background-color: #ffe6b7;
-        border-radius: 24px;
-        height: 180px;
-        left: 52px;
-        position: absolute;
-        top: 0;
-        width: 260px;
-      }
+    .macbook-pro .overlap-group-4 {
+      background-color: #ffe6b7;
+      border-radius: 24px;
+      height: 180px;
+      left: 52px;
+      position: absolute;
+      top: 0;
+      width: 260px;
+    }
 
-      .macbook-pro .p-2 {
-        height: 120px;
-        left: 14px;
-        position: absolute;
-        top: 66px;
-        width: 235px;
-      }
+    .macbook-pro .p-2 {
+      height: 120px;
+      left: 14px;
+      position: absolute;
+      top: 66px;
+      width: 235px;
+    }
 
-      .macbook-pro .text-wrapper-9 {
-        color: #000000;
-        font-family: "Lufga-Bold", Helvetica;
-        font-size: 14px;
-        font-weight: 700;
-        height: 20px;
-        left: 0;
-        letter-spacing: 0;
-        line-height: 20px;
-        position: absolute;
-        top: 0;
-        white-space: nowrap;
-      }
+    .macbook-pro .text-wrapper-9 {
+      color: #000000;
+      font-family: "Lufga-Bold", Helvetica;
+      font-size: 14px;
+      font-weight: 700;
+      height: 20px;
+      left: 0;
+      letter-spacing: 0;
+      line-height: 20px;
+      position: absolute;
+      top: 0;
+      white-space: nowrap;
+    }
 
-      .macbook-pro .text-wrapper-10 {
-        color: #352e25;
-        font-family: "Lufga-Medium", Helvetica;
-        font-size: 12px;
-        font-weight: 500;
-        height: 85px;
-        left: 0;
-        letter-spacing: 0;
-        line-height: 13px;
-        position: absolute;
-        top: 15px;
-        width: 231px;
-      }
+    .macbook-pro .text-wrapper-10 {
+      color: #352e25;
+      font-family: "Lufga-Medium", Helvetica;
+      font-size: 12px;
+      font-weight: 500;
+      height: 85px;
+      left: 0;
+      letter-spacing: 0;
+      line-height: 13px;
+      position: absolute;
+      top: 15px;
+      width: 231px;
+    }
 
-      .macbook-pro .btn-div-2 {
-        height: 56px;
-        left: 128px;
-        position: absolute;
-        top: 10px;
-        width: 122px;
-      }
+    .macbook-pro .btn-div-2 {
+      height: 56px;
+      left: 128px;
+      position: absolute;
+      top: 10px;
+      width: 122px;
+    }
 
-      .macbook-pro .ic-outline-delete {
-        height: 18px;
-        left: 9px;
-        position: absolute;
-        top: 13px;
-        width: 24px;
-      }
+    .macbook-pro .ic-outline-delete {
+      height: 18px;
+      left: 9px;
+      position: absolute;
+      top: 13px;
+      width: 24px;
+    }
 
-      .macbook-pro .charm-tick {
-        height: 16px;
-        left: 15px;
-        position: absolute;
-        top: 14px;
-        width: 16px;
-      }
+    .macbook-pro .charm-tick {
+      height: 16px;
+      left: 15px;
+      position: absolute;
+      top: 14px;
+      width: 16px;
+    }
 
-      .macbook-pro .time {
-        height: 143px;
-        left: 0;
-        position: absolute;
-        top: 10px;
-        width: 45px;
-      }
+    .macbook-pro .time {
+      height: 143px;
+      left: 0;
+      position: absolute;
+      top: 10px;
+      width: 45px;
+    }
 
-      .macbook-pro .text-wrapper-11 {
-        color: #262735;
-        font-family: "Lufga-Bold", Helvetica;
-        font-size: 14px;
-        font-weight: 700;
-        height: 20px;
-        left: 0;
-        letter-spacing: 0;
-        line-height: 20px;
-        position: absolute;
-        top: 0;
-        white-space: nowrap;
-      }
+    .macbook-pro .text-wrapper-11 {
+      color: #262735;
+      font-family: "Lufga-Bold", Helvetica;
+      font-size: 14px;
+      font-weight: 700;
+      height: 20px;
+      left: 0;
+      letter-spacing: 0;
+      line-height: 20px;
+      position: absolute;
+      top: 0;
+      white-space: nowrap;
+    }
 
-      .macbook-pro .text-wrapper-12 {
-        color: #26273570;
-        font-family: "Lufga-Bold", Helvetica;
-        font-size: 14px;
-        font-weight: 700;
-        height: 20px;
-        left: 0;
-        letter-spacing: 0;
-        line-height: 20px;
-        position: absolute;
-        top: 123px;
-        white-space: nowrap;
-      }
+    .macbook-pro .text-wrapper-12 {
+      color: #26273570;
+      font-family: "Lufga-Bold", Helvetica;
+      font-size: 14px;
+      font-weight: 700;
+      height: 20px;
+      left: 0;
+      letter-spacing: 0;
+      line-height: 20px;
+      position: absolute;
+      top: 123px;
+      white-space: nowrap;
+    }
 
-      .macbook-pro .history-2 {
-        height: 169px;
-        left: 20px;
-        position: absolute;
-        top: 134px;
-        width: 312px;
-      }
+    .macbook-pro .history-2 {
+      height: 169px;
+      left: 20px;
+      position: absolute;
+      top: 134px;
+      width: 312px;
+    }
 
-      .macbook-pro .time-2 {
-        height: 133px;
-        left: 0;
-        position: absolute;
-        top: 10px;
-        width: 47px;
-      }
+    .macbook-pro .time-2 {
+      height: 133px;
+      left: 0;
+      position: absolute;
+      top: 10px;
+      width: 47px;
+    }
 
-      .macbook-pro .text-wrapper-13 {
-        color: #26273570;
-        font-family: "Lufga-Bold", Helvetica;
-        font-size: 14px;
-        font-weight: 700;
-        height: 20px;
-        left: 0;
-        letter-spacing: 0;
-        line-height: 20px;
-        position: absolute;
-        top: 113px;
-        white-space: nowrap;
-      }
+    .macbook-pro .text-wrapper-13 {
+      color: #26273570;
+      font-family: "Lufga-Bold", Helvetica;
+      font-size: 14px;
+      font-weight: 700;
+      height: 20px;
+      left: 0;
+      letter-spacing: 0;
+      line-height: 20px;
+      position: absolute;
+      top: 113px;
+      white-space: nowrap;
+    }
 
-      .macbook-pro .overlap-9 {
-        background-color: #e6f7f5;
-        border-radius: 24px;
-        height: 170px;
-        left: 52px;
-        position: absolute;
-        top: 0;
-        width: 260px;
-      }
+    .macbook-pro .overlap-9 {
+      background-color: #e6f7f5;
+      border-radius: 24px;
+      height: 170px;
+      left: 52px;
+      position: absolute;
+      top: 0;
+      width: 260px;
+    }
 
-      .macbook-pro .p-3 {
-        height: 136px;
-        left: 15px;
-        position: absolute;
-        top: 46px;
-        width: 235px;
-      }
+    .macbook-pro .p-3 {
+      height: 136px;
+      left: 15px;
+      position: absolute;
+      top: 46px;
+      width: 235px;
+    }
 
-      .macbook-pro .senti-nlp {
-        color: #000000;
-        font-family: "Lufga-Bold", Helvetica;
-        font-size: 40px;
-        font-weight: 700;
-        left: 17px;
-        letter-spacing: -0.74px;
-        line-height: 36px;
-        position: absolute;
-        text-align: center;
-        top: 0px;
-        white-space: nowrap;
-      }
+    .macbook-pro .senti-nlp {
+      color: #000000;
+      font-family: "Lufga-Bold", Helvetica;
+      font-size: 40px;
+      font-weight: 700;
+      left: 17px;
+      letter-spacing: -0.74px;
+      line-height: 36px;
+      /* position: absolute; */
+      text-align: center;
+      top: 0px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
 
-    
-    </style>
-  </head>
+<body>
+  <div class="macbook-pro">
+    <header class="app-header">
+      <!-- app logo -->
+      <h1 class="senti-nlp space">Senti &amp; Nlp</h1>
 
-  <body>
-    <div class="macbook-pro">
-      <div class="div">
-        <h1 class="senti-nlp">Senti &amp; Nlp</h1>
-        <div class="group">
-          <div class="overlap-group">
-            <form method="POST" action="/predict">
-              <!-- {/* Use input component for the input area */} -->
-              <input
-                class="inputarea"
-                name="content" 
-                placeholder="www.yelp.com/biz/social-brew-cafe-pyrmont"
-              >{{ url }}</input>
-              <!-- {/* Use button component for the submit button */} -->
-              <button class="submit-button" onclick="{handleSubmit}">
-                <img
-                  class="clarity-search-line"
-                  alt="Clarity search line"
-                  src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/clarity-search-line.svg"
-                />
-              </button>
-              <a class="vector-wrapper" href="/">
-                <img
-                  class="vector"
-                  alt="Vector"
-                  src="https://generation-sessions.s3.amazonaws.com/7d605cf680390442d74aa1293b6f22bd/img/ic-outline-delete.svg"
-                  href="/"
-                />
-              </a>
-              <button class="button-submit" type="submit">
-                <img
-                  class="img"
-                  alt="Vector"
-                  src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/vector-4.svg"
-                />
-              </button>
-            </form>
+      <!-- search bar  -->
+      <div class="group space">
+        <div class="overlap-group">
+          <form method="POST" action="/predict">
+            <!-- {/* Use input component for the input area */} -->
+            <input class="inputarea" name="content" placeholder="www.yelp.com/biz/social-brew-cafe-pyrmont">{{ url
+            }}</input>
+            <!-- {/* Use button component for the submit button */} -->
+            <button class="submit-button" onclick="{handleSubmit}">
+              <img class="clarity-search-line" alt="Clarity search line"
+                src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/clarity-search-line.svg" />
+            </button>
+            <a class="vector-wrapper" href="/">
+              <img class="vector" alt="Vector"
+                src="https://generation-sessions.s3.amazonaws.com/7d605cf680390442d74aa1293b6f22bd/img/ic-outline-delete.svg"
+                href="/" />
+            </a>
+            <button class="button-submit" type="submit">
+              <img class="img" alt="Vector"
+                src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/vector-4.svg" />
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- profile  -->
+      <div class="profile space">
+        <div class="overlap-4">
+          <img class="avtar" alt="Avtar"
+            src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/avtar@2x.png" />
+          <div class="notify">
+            <div class="num">
+              <div class="div-wrapper">
+                <div class="text-wrapper-2">2</div>
+              </div>
+            </div>
+            <img class="vector-3" alt="Vector"
+              src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/vector-2.svg" />
+          </div>
+          <div class="settting">
+            <img class="vector-4" alt="Vector"
+              src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/vector-1.svg" />
+          </div>
+          <div class="overlap-5">
+            <div class="text-wrapper-3">Aatm Prakash</div>
+            <div class="text-wrapper-4">Machine learning Engineer</div>
           </div>
         </div>
-        <!-- {/* Your existing code */} -->
-        <div class="center-div">
-          <div class="overlap">
-            <div class="overlap-2">
-              <div class="overlap-3">
-                <p class="social-brew-is"  id="display1">
-                  {{summ_prediction}}
-                </p>
-                <div class="text-wrapper">Summary :</div>
-              </div>
-              <div class="group-2">
-                <div class="solar-copy-linear-wrapper">
-                  <img
-                    class="img-2"
-                    alt="Solar copy linear"
-                    src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/solar-copy-linear.svg"
-                  />
-                </div>
-                <div class="mingcute-send-line-wrapper">
-                  <img
-                    class="img-2"
-                    alt="Mingcute send line"
-                    src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/mingcute-send-line.svg"
-                  />
-                </div>
-              </div>
-            </div>
+      </div>
 
-            <div class="rectangle">
-              <img
-                class="ser-logo"
-                alt="Ser logo"
-                src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/ser-logo-3@2x.png"
-              />
-            </div>
-            <div class="overlap-group-2">
-              <img
-                class="ser-logo-2"
-                alt="Ser logo"
-                src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/ser-logo-2@2x.png"
-              />
-              <img
-                class="ser-logo-3"
-                alt="Ser logo"
-                src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/ser-logo-1@2x.png"
-              />
-              <img
-                class="yt"
-                alt="Yt"
-                src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/yt@2x.png"
-              />
-              <img
-                class="ser-logo-4"
-                alt="Ser logo"
-                src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/ser-logo@2x.png"
-              />
-              <div class="group-3">
-                <div class="mingcute-save-line-wrapper">
-                  <img
-                    class="mingcute-save-line"
-                    alt="Mingcute save line"
-                    src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/mingcute-save-line.svg"
-                  />
-                </div>
-                <div class="img-wrapper">
-                  <img
-                    class="vector-2"
-                    alt="Vector"
-                    src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/vector-3.svg"
-                  />
-                </div>
-                <div class="icon-park-outline-wrapper">
-                  <img
-                    class="icon-park-outline"
-                    alt="Icon park outline"
-                    src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/icon-park-outline-plus-2.svg"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+    </header>
+    <!-- {/* Your existing code */} -->
+    <div class="center-div">
 
-          <div class="his-main-div">
-            <div class="history-div">
-              <div class="btn-div">
-                <div class="img-wrapper-2">
-                  <img
-                    class="icon-park-outline-2"
-                    alt="Icon park outline"
-                    src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/icon-park-outline-plus-1.svg"
-                  />
-                </div>
-                <div class="img-wrapper-3">
-                  <img
-                    class="icon-park-outline-2"
-                    alt="Icon park outline"
-                    src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/icon-park-outline-plus.svg"
-                  />
-                </div>
-              </div>
-              <div class="today-s-history">
-                Today’s
-                <br />
-                History
-              </div>
+      <!-- first section -->
+      <div class="his-main-div space-surround box">
+        <div class="history-div">
+          <div class="btn-div">
+            <div class="img-wrapper-2">
+              <img class="icon-park-outline-2" alt="Icon park outline"
+                src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/icon-park-outline-plus-1.svg" />
             </div>
-            <div class="history">
-              <div class="overlap-group-4">
-                <div class="p-2">
-                  <div class="text-wrapper-9">Yelp</div>
-                  <p class="text-wrapper-10">
-                    extremely busy for both dine-in and take-away. Service is
-                    fairly quick and servers are all friendly. We tried the
-                    smoked salmon salad, the soft shell crab tacos, ricotta
-                  </p>
-                </div>
-                <div class="btn-div-2">
-                  <div class="img-wrapper-2">
-                    <img
-                      class="ic-outline-delete"
-                      alt="Ic outline delete"
-                      src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/ic-outline-delete-1.svg"
-                    />
-                  </div>
-                  <div class="img-wrapper-3">
-                    <img
-                      class="charm-tick"
-                      alt="Charm tick"
-                      src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/charm-tick-1.svg"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="time">
-                <div class="text-wrapper-11">12:30</div>
-                <div class="text-wrapper-12">13:00</div>
-              </div>
+            <div class="img-wrapper-3">
+              <img class="icon-park-outline-2" alt="Icon park outline"
+                src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/icon-park-outline-plus.svg" />
             </div>
-            <div class="history-2">
-              <div class="time-2">
-                <div class="text-wrapper-13">10:15</div>
-                <div class="text-wrapper-11">09:30</div>
+          </div>
+          <div class="today-s-history">
+            Today’s
+            <br />
+            History
+          </div>
+        </div>
+        <div class="history">
+          <div class="overlap-group-4">
+            <div class="p-2">
+              <div class="text-wrapper-9">Yelp</div>
+              <p class="text-wrapper-10">
+                extremely busy for both dine-in and take-away. Service is
+                fairly quick and servers are all friendly. We tried the
+                smoked salmon salad, the soft shell crab tacos, ricotta
+              </p>
+            </div>
+            <div class="btn-div-2">
+              <div class="img-wrapper-2">
+                <img class="ic-outline-delete" alt="Ic outline delete"
+                  src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/ic-outline-delete-1.svg" />
               </div>
-              <div class="overlap-9">
-                <div class="p-3">
-                  <div class="text-wrapper-9">Instagram</div>
-                  <p class="text-wrapper-10">
-                    extremely busy for both dine-in and take-away. Service is
-                    fairly quick and servers are all friendly. We tried the
-                    smoked salmon salad, the soft shell crab tacos, ricotta
-                  </p>
-                </div>
-                <div class="btn-div-2">
-                  <div class="img-wrapper-2">
-                    <img
-                      class="ic-outline-delete"
-                      alt="Ic outline delete"
-                      src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/ic-outline-delete-1.svg"
-                    />
-                  </div>
-                  <div class="img-wrapper-3">
-                    <img
-                      class="charm-tick"
-                      alt="Charm tick"
-                      src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/charm-tick-1.svg"
-                    />
-                  </div>
-                </div>
+              <div class="img-wrapper-3">
+                <img class="charm-tick" alt="Charm tick"
+                  src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/charm-tick-1.svg" />
               </div>
             </div>
           </div>
-          <div class="profile">
-            <div class="overlap-4">
-              <img
-                class="avtar"
-                alt="Avtar"
-                src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/avtar@2x.png"
-              />
-              <div class="notify">
-                <div class="num">
-                  <div class="div-wrapper">
-                    <div class="text-wrapper-2">2</div>
-                  </div>
-                </div>
-                <img
-                  class="vector-3"
-                  alt="Vector"
-                  src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/vector-2.svg"
-                />
-              </div>
-              <div class="settting">
-                <img
-                  class="vector-4"
-                  alt="Vector"
-                  src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/vector-1.svg"
-                />
-              </div>
-              <div class="overlap-5">
-                <div class="text-wrapper-3">Aatm Prakash</div>
-                <div class="text-wrapper-4">Machine learning Engineer</div>
-              </div>
-            </div>
+          <div class="time">
+            <div class="text-wrapper-11">12:30</div>
+            <div class="text-wrapper-12">13:00</div>
           </div>
-          <div class="overlap-wrapper">
-            <div class="overlap-6">
-              <div class="overlap-7">
-                <p class="p" id="display3">Sentiment class : {{rate_prediction}} ⭐</p>
-                <div class="text-wrapper-5" id="display2">{{cnt_prediction}}</div>
+        </div>
+        <div class="history-2">
+          <div class="time-2">
+            <div class="text-wrapper-13">10:15</div>
+            <div class="text-wrapper-11">09:30</div>
+          </div>
+          <div class="overlap-9">
+            <div class="p-3">
+              <div class="text-wrapper-9">Instagram</div>
+              <p class="text-wrapper-10">
+                extremely busy for both dine-in and take-away. Service is
+                fairly quick and servers are all friendly. We tried the
+                smoked salmon salad, the soft shell crab tacos, ricotta
+              </p>
+            </div>
+            <div class="btn-div-2">
+              <div class="img-wrapper-2">
+                <img class="ic-outline-delete" alt="Ic outline delete"
+                  src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/ic-outline-delete-1.svg" />
               </div>
-              <div class="group-4">
-                <div class="overlap-group-wrapper">
-                  <div class="overlap-group-3">
-                    <div class="text-wrapper-6">3</div>
-                  </div>
-                </div>
-                <!-- <div class="group-5"> -->
-                <div class="overlap-8">
-                  <div class="rectangle-2">
-                    <div class="text-wrapper-7">5</div>
-                  </div>
-                </div>
-                <div class="group-6">
-                  <div class="overlap-group-3">
-                    <div class="text-wrapper-8">1</div>
-                  </div>
-                </div>
-                <!--             </div> -->
-                <div class="group-7">
-                  <img
-                    class="vector-2"
-                    alt="Vector"
-                    src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/vector-3.svg"
-                  />
-                </div>
+              <div class="img-wrapper-3">
+                <img class="charm-tick" alt="Charm tick"
+                  src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/charm-tick-1.svg" />
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- second section -->
+      <div class="overlap space-surround box">
+        <div class="overlap-2">
+          <div class="overlap-3">
+            <p class="social-brew-is" id="display1">
+              {{summ_prediction}}
+            </p>
+            <div class="text-wrapper">Summary :</div>
+          </div>
+          <div class="group-2">
+            <div class="solar-copy-linear-wrapper">
+              <img class="img-2" alt="Solar copy linear"
+                src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/solar-copy-linear.svg" />
+            </div>
+            <div class="mingcute-send-line-wrapper">
+              <img class="img-2" alt="Mingcute send line"
+                src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/mingcute-send-line.svg" />
+            </div>
+          </div>
+        </div>
+
+        <div class="rectangle">
+          <img class="ser-logo" alt="Ser logo"
+            src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/ser-logo-3@2x.png" />
+        </div>
+        <div class="overlap-group-2">
+          <img class="ser-logo-2" alt="Ser logo"
+            src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/ser-logo-2@2x.png" />
+          <img class="ser-logo-3" alt="Ser logo"
+            src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/ser-logo-1@2x.png" />
+          <img class="yt" alt="Yt"
+            src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/yt@2x.png" />
+          <img class="ser-logo-4" alt="Ser logo"
+            src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/ser-logo@2x.png" />
+          <div class="group-3">
+            <div class="mingcute-save-line-wrapper">
+              <img class="mingcute-save-line" alt="Mingcute save line"
+                src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/mingcute-save-line.svg" />
+            </div>
+            <div class="img-wrapper">
+              <img class="vector-2" alt="Vector"
+                src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/vector-3.svg" />
+            </div>
+            <div class="icon-park-outline-wrapper">
+              <img class="icon-park-outline" alt="Icon park outline"
+                src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/icon-park-outline-plus-2.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="overlap-wrapper space-surround"> -->
+      <!-- third section -->
+      <div class="overlap-6 space-surround box">
+        <div class="overlap-7">
+
+          <!-- please look into the font size of the commented tags -->🧐 ✨✨✨✨✨✨✨✨✨
+
+          <!-- <p class="p" id="display3">Sentiment class : {{rate_prediction}} ⭐</p>
+                    <div class="text-wrapper-5" id="display2">{{cnt_prediction}}</div> -->
+        </div>
+        <div class="group-4">
+          <div class="overlap-group-wrapper">
+            <div class="overlap-group-3">
+              <div class="text-wrapper-6">3</div>
+            </div>
+          </div>
+          <!-- <div class="group-5"> -->
+          <div class="overlap-8">
+            <div class="rectangle-2">
+              <div class="text-wrapper-7">5</div>
+            </div>
+          </div>
+          <div class="group-6">
+            <div class="overlap-group-3">
+              <div class="text-wrapper-8">1</div>
+            </div>
+          </div>
+          <!--             </div> -->
+          <div class="group-7">
+            <img class="vector-2" alt="Vector"
+              src="https://generation-sessions.s3.amazonaws.com/bb260cced776329015809c06deba7736/img/vector-3.svg" />
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

@@ -6,6 +6,12 @@ Welcome to the Summary and Sentiment NLP project! This repository aims to provid
 
 The main objective of this project is to develop an NLP application that can summarize lengthy texts and perform sentiment analysis on them. With this tool, users can quickly grasp the essence of long documents and gain insights into the overall sentiment expressed in the text.
 
+<p align="center">
+<a href="">
+<img src="https://github.com/aatmprakash/Summary-and-Sentiment-Nlp/blob/5d45409fe32fcf5329f18bb33db64301945e2f67/fiui%20senti.png" width="800"><br>
+</a>
+</p>
+
 ![Design Image](https://github.com/aatmprakash/Summary-and-Sentiment-Nlp/blob/88bf6bdf567542a9d545e6d68615926ca0aea30c/Screenshot%20from%202023-07-24%2021-31-22.png)
 
 ## Technologies Used

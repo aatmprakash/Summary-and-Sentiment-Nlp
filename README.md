@@ -1,6 +1,6 @@
 # Summary and Sentiment NLP Project
 
-Welcome to the Summary and Sentiment NLP project! This repository aims to provide natural language processing functionalities to summarize text and analyze sentiments. We believe this project has great potential, and we are excited to invite collaborators to join us in making it even better.** It only works for yelp.com aiim to make it better**.
+Welcome to the This is a project where you can select any product form website like amazon, or any food website and we can analyze it comments and Review! This repository aims to provide natural language processing functionalities to summarize text and analyze sentiments. We believe this project has great potential, and we are excited to invite collaborators to join us in making it even better.** It only works for yelp.com aiim to make it better**.
 
 ## Project Overview
 
